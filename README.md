@@ -61,7 +61,9 @@ Nota: Asegúrate de activar los "Privileged Gateway Intents" (Presence, Server M
 
 👮‍♂️ Admin/invitesMuestra cuántas invitaciones tienes actualmente.👤 Usuario📷 
 
-PrevisualizaciónSorteo en Tiempo Real:El bot crea un panel donde se ve el premio, el host y el tiempo restante actualizándose. Si el usuario no tiene las invites necesarias, el bot le avisará efímeramente.Log de Bienvenida:"📥 ¡Nuevo Miembro! Bienvenido @Usuario. Invitado por @Inviter (Sus Invites: 5)."
+Previsualización
+Sorteo en Tiempo Real: El bot crea un panel donde se ve el premio, el host y el tiempo restante actualizándose. Si el usuario no tiene las invites necesarias, el bot le avisará efímeramente.Log de Bienvenida:"
+📥 ¡Nuevo Miembro! Bienvenido @Usuario. Invitado por @Inviter (Sus Invites: 5)."
 
 ---
 
