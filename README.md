@@ -42,7 +42,9 @@ El proyecto está organizado para ser escalable:
      └── 📄 sorteos.py    # Lógica de los Sorteos y Comandos
 ```
 
-🚀 Instalación y Uso1. Requisitos PreviosAsegúrate de tener Python instalado. Luego instala la librería ``discord.py:Bashpip install discord.py``
+🚀 Instalación y Uso
+
+1. Requisitos PreviosAsegúrate de tener Python instalado. Luego instala la librería ``discord.py:Bashpip install discord.py``
 
 2. ConfiguraciónAbre el archivo ``main.py`` y edita las siguientes líneas con tus ``datos:Python#`` En ``main.py``
 
