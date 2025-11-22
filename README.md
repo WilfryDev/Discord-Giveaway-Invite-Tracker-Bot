@@ -1,71 +1,59 @@
-# 🤖 Discord Giveaway & Invite Tracker Bot
-
-> **Un sistema avanzado de sorteos y rastreo de invitaciones para comunidades de Discord.**
+> **Sistema profesional de Giveaways & Tracking para Discord.**
+> *Desarrollado por xPlugins*
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python)
 ![Discord.py](https://img.shields.io/badge/Discord.py-2.0%2B-5865F2?style=for-the-badge&logo=discord)
 ![Status](https://img.shields.io/badge/Status-Stable-green?style=for-the-badge)
 
-Este bot combina un potente **Tracker de Invitaciones** con un sistema de **Sorteos (Giveaways)** que exige requisitos de invitación para participar. Todo funcionando en tiempo real y estructurado modularmente con Cogs.
+**Strafe Studios Bot** es una solución completa para comunidades que buscan crecimiento real. Combina un rastreador de invitaciones inteligente (detecta Fakes y Salidas) con un sistema de sorteos que exige requisitos de invitación y roles específicos para participar.
 
 ---
 
 ## ✨ Características Principales
 
-### 🎉 Sistema de Sorteos Avanzado
-- **Requisitos de Entrada:** Los usuarios solo pueden participar si cumplen con un número X de invitaciones.
-- **Tiempo Real:** El Embed del sorteo actualiza el contador de tiempo cada 5 segundos (sin saturar la API).
-- **Botones Interactivos:** Sistema de un clic para participar.
-- **Anti-Fraude:** Verifica las invites reales al momento de hacer clic.
+### 🎉 Sistema de Sorteos (Giveaways)
+- **Requisitos Dinámicos:** Configura cuántas invites necesita un usuario para entrar.
+- **[NUEVO] Roles Opcionales:** Ahora puedes restringir sorteos a roles específicos (ej: Sorteo solo para VIPs).
+- **Tiempo Real:** El panel se actualiza cada 5 segundos mostrando la cuenta regresiva.
+- **Embeds Premium:** Diseño dorado y limpio al anunciar ganadores.
 
-### 📈 Tracker de Invitaciones (Logs)
-- **Bienvenidas Inteligentes:** Detecta quién invitó al nuevo usuario.
-- **Contador Personal:** Muestra cuántas invites tiene el invitador en el mensaje de bienvenida.
-- **Caché de Invites:** Sistema optimizado para comparar cambios en las invitaciones.
+### 📈 Tracker Inteligente (Logs)
+- **Base de Datos JSON:** Guarda estadísticas persistentes.
+- **Estadísticas Reales:**
+  - ✅ **Joins:** Entradas totales.
+  - ❌ **Left:** Usuarios que se salieron (se restan de las invites reales).
+  - 🤖 **Fake:** Cuentas creadas hace menos de 7 días.
+  - 🔄 **Rejoins:** Usuarios que volvieron a entrar.
 
-### ⚙️ Estructura Profesional
-- Código limpio y modular usando **Cogs**.
-- Configuración centralizada en `main.py`.
+### 📚 Utilidades
+- **Ayuda Híbrida:** Funciona tanto con `/ayuda` (Slash) como con `!ayuda` (Prefix).
+- **Modularidad:** Código organizado en Cogs (`eventos`, `sorteos`, `general`).
 
 ---
 
 ## 📂 Estructura del Proyecto
 
-El proyecto está organizado para ser escalable:
-
 ```text
-📦 Tu-Proyecto/
- ├── 📄 main.py           # Archivo principal (Configuración y Arranque)
+📦 Tu-Carpeta-Bot/
+ ├── 📄 main.py           # Núcleo del bot y configuración
+ ├── 📄 tracking.json     # Base de datos automática (se crea sola)
  ├── 📄 README.md         # Documentación
  └── 📂 cogs/
-     ├── 📄 eventos.py    # Lógica del Tracker de Invites y Logs
-     └── 📄 sorteos.py    # Lógica de los Sorteos y Comandos
+     ├── 📄 eventos.py    # Tracker de Invites, Logs y DB
+     ├── 📄 sorteos.py    # Sistema de Sorteos con Botones
+     └── 📄 general.py    # Comandos de Ayuda e Información
 ```
+🚀 Instalación y Uso1. RequisitosNecesitas tener Python 3.9+ instalado.Instala las dependencias:Bashpip install discord.py
 
-🚀 Instalación y Uso
+2. ConfiguraciónEdita el archivo main.py:PythonTOKEN = "TU_TOKEN_AQUI"
+ID_CANAL_LOGS = 123456789012345678  # ID del canal para logs de bienvenida
 
-1. Requisitos PreviosAsegúrate de tener Python instalado. Luego instala la librería ``discord.py:Bashpip install discord.py``
+Importante: Activa los "Privileged Gateway Intents" (Presence, Server Members, Message Content) en el Discord Developer Portal.3. EjecuciónBashpython main.py
 
-2. ConfiguraciónAbre el archivo ``main.py`` y edita las siguientes líneas con tus ``datos:Python#`` En ``main.py``
+🎮 Comandos Disponibles👮‍♂️ Administración (Staff)
+ComandoArgumentosDescripción/sorteopremio duracion invites [rol]Crea un sorteo. El campo [rol] es opcional; úsalo para sorteos exclusivos.👤 Usuarios (Público)ComandoDescripción/ayuda o !ayudaMuestra el panel de ayuda con los comandos./invites(Próximamente) Muestra tus estadísticas de invitaciones.📄 
 
-``TOKEN = "TU_TOKEN_DE_DISCORD_AQUI"``
-``ID_CANAL_LOGS = 123456789012345678``  # ID del canal para las bienvenidas
+Licencia & CréditosEste proyecto está bajo la Licencia MIT.PlaintextMIT License
+Copyright (c) 2025 Strafe Studios.
 
-Nota: Asegúrate de activar los "Privileged Gateway Intents" (Presence, Server Members, Message Content) en el Discord Developer Portal.
-
-3. Iniciar el Bot Ejecuta el archivo principal desde tu terminal:Bash usando ``python main.py``
-
-🎮 Comandos DisponiblesComando 
-
- - DescripciónPermiso/sorteo [premio] [tiempo] [invites] Crea un sorteo con cuenta regresiva y requisitos.
-
-👮‍♂️ Admin/invitesMuestra cuántas invitaciones tienes actualmente.👤 Usuario📷 
-
-Previsualización
-Sorteo en Tiempo Real: El bot crea un panel donde se ve el premio, el host y el tiempo restante actualizándose. Si el usuario no tiene las invites necesarias, el bot le avisará efímeramente.Log de Bienvenida:"
-📥 ¡Nuevo Miembro! Bienvenido @Usuario. Invitado por @Inviter (Sus Invites: 5)."
-
----
-
-## 👨‍💻 CréditosDesarrollado con ❤️ y ☕ por WillfryDev. Si usas este código, por favor mantén los créditos en el footer de los embeds.
-
+Desarrollado con ❤️ por WillfryDev.
